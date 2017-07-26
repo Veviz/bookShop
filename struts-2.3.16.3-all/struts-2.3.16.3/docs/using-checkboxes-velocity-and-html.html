@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+<html>
+<head>
+    <LINK type="text/css" rel="stylesheet" href="https://struts.apache.org/css/default.css">
+    <style type="text/css">
+        .dp-highlighter {
+            width:95% !important;
+        }
+    </style>
+    <style type="text/css">
+        .footer {
+            background-image:      url('https://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+            background-repeat:     repeat-x;
+            background-position:   left top;
+            padding-top:           4px;
+            color:                 #666;
+        }
+    </style>
+    <link href='http://struts.apache.org/highlighter/style/shCoreStruts.css' rel='stylesheet' type='text/css' />
+    <link href='http://struts.apache.org/highlighter/style/shThemeStruts.css' rel='stylesheet' type='text/css' />
+    <script src='http://struts.apache.org/highlighter/js/shCore.js' type='text/javascript'></script>
+            <script src='http://struts.apache.org/highlighter/js/shBrushJava.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript" language="javascript">
+        var hide = null;
+        var show = null;
+        var children = null;
+
+        function init() {
+            /* Search form initialization */
+            var form = document.forms['search'];
+            if (form != null) {
+                form.elements['domains'].value = location.hostname;
+                form.elements['sitesearch'].value = location.hostname;
+            }
+
+            /* Children initialization */
+            hide = document.getElementById('hide');
+            show = document.getElementById('show');
+            children = document.all != null ?
+                    document.all['children'] :
+                    document.getElementById('children');
+            if (children != null) {
+                children.style.display = 'none';
+                show.style.display = 'inline';
+                hide.style.display = 'none';
+            }
+        }
+
+        function showChildren() {
+            children.style.display = 'block';
+            show.style.display = 'none';
+            hide.style.display = 'inline';
+        }
+
+        function hideChildren() {
+            children.style.display = 'none';
+            show.style.display = 'inline';
+            hide.style.display = 'none';
+        }
+    </script>
+    <title>Using Checkboxes - Velocity and HTML</title>
+</head>
+<body onload="init()">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+    <tr class="topBar">
+        <td align="left" valign="middle" class="topBarDiv" align="left" nowrap>
+            &nbsp;<a href="home.html">Home</a>&nbsp;&gt;&nbsp;<a href="faqs.html">FAQs</a>&nbsp;&gt;&nbsp;<a href="cookbook.html">Cookbook</a>&nbsp;&gt;&nbsp;<a href="using-checkboxes.html">Using Checkboxes</a>&nbsp;&gt;&nbsp;<a href="using-checkboxes-velocity-and-html.html">Using Checkboxes - Velocity and HTML</a>
+        </td>
+        <td align="right" valign="middle" nowrap>
+            <form name="search" action="http://www.google.com/search" method="get">
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="hidden" name="oe" value="UTF-8" />
+                <input type="hidden" name="domains" value="" />
+                <input type="hidden" name="sitesearch" value="" />
+                <input type="text" name="q" maxlength="255" value="" />
+                <input type="submit" name="btnG" value="Google Search" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+<div id="PageContent">
+    <div class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <div style="margin: 0px 10px 0px 10px" class="smalltext">Apache Struts 2 Documentation</div>
+        <div style="margin: 0px 10px 8px 10px"  class="pagetitle">Using Checkboxes - Velocity and HTML</div>
+
+        <div class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+            <a href="https://cwiki.apache.org/confluence/pages/editpage.action?pageId=14063">
+                <img src="https://cwiki.apache.org/confluence/images/icons/notep_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Edit Page"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/editpage.action?pageId=14063">Edit Page</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/listpages.action?key=WW">
+                <img src="https://cwiki.apache.org/confluence/images/icons/browse_space.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Browse Space"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/listpages.action?key=WW">Browse Space</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=WW&fromPageId=14063">
+                <img src="https://cwiki.apache.org/confluence/images/icons/add_page_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Add Page"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=WW&fromPageId=14063">Add Page</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/createblogpost.action?spaceKey=WW&fromPageId=14063">
+                <img src="https://cwiki.apache.org/confluence/images/icons/add_blogentry_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Add News"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/createblogpost.action?spaceKey=WW&fromPageId=14063">Add News</a>
+        </div>
+    </div>
+
+    <div class="pagecontent">
+        <div class="wiki-content">
+            <div id="ConfluenceContent">
+
+<p>Velocity View - edit.vm:</p>
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<script class="theme: Default; brush: java; gutter: false" type="syntaxhighlighter"><![CDATA[
+&lt;html&gt;
+&lt;body onload=&quot;document.forms[0].elements[0].focus()&quot;&gt;
+
+&lt;a href=&quot;home.vm&quot;&gt;Home&lt;/a&gt;&lt;br/&gt;
+
+#if ($fieldErrors)
+  #foreach ($error in $fieldErrors)
+    $error&lt;br&gt;
+  #end
+#end
+#if ($actionErrors)
+  #foreach ($error in $actionErrors)
+    $error&lt;br&gt;
+  #end
+#end
+
+&lt;form name=&quot;edit&quot; action=&quot;edit.action&quot; method=&quot;post&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;td&gt;$user.username&lt;/td&gt;&lt;/tr&gt;
+#formRowText(&quot;Password&quot; &quot;user.password&quot; $stack.findValue(&quot;@cash.validator.PasswordFormatValidator@PASSWORD_MASK&quot;))
+#formRowText(&quot;Repeat Password&quot; &quot;repeatPassword&quot; $stack.findValue(&quot;@cash.validator.PasswordFormatValidator@PASSWORD_MASK&quot;))
+#formRowText(&quot;Email&quot; &quot;user.email&quot; $!user.email)
+#formRowSelect(&quot;Language&quot; &quot;user.locale&quot; $stack.findValue(&quot;@cash.util.Html@getInstance()&quot;).getLocales($locale) $!user.locale.toString())
+#formRowSelect(&quot;Time Zone&quot; &quot;user.timeZone&quot; $stack.findValue(&quot;@cash.util.Html@getInstance()&quot;).getTimeZones($locale) $!user.timeZone.ID)
+#formRowText(&quot;Telephone&quot; &quot;user.telephone&quot; $!user.telephone)
+#formRowCheckbox(&quot;Locked Out&quot; &quot;user.lockedOut&quot; &quot;true&quot; $user.lockedOut)
+#formRowCheckbox(&quot;Disabled&quot; &quot;user.disabled&quot; &quot;true&quot; $user.disabled)
+
+
+#set ($privs = [OS:&quot;boss&quot;, &quot;admin&quot;, &quot;early&quot;, &quot;late&quot;, &quot;train&quot;])
+
+#foreach ($priv in $privs)
+  #set ($checked = $user.privileges.contains($priv))
+  #formRowCheckbox($priv &quot;user.priv&quot; $priv $checked)
+#end
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;input type=&quot;hidden&quot; name=&quot;user.username&quot; value=&quot;$user.username&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+]]></script>
+</div></div>
+
+<p>Velocity Macros - macros.vm:</p>
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<script class="theme: Default; brush: java; gutter: false" type="syntaxhighlighter"><![CDATA[
+#macro (formRowText $label $name $value)
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;$name&quot;&gt;$label&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;$name&quot; type=&quot;text&quot; name=&quot;$name&quot; value=&quot;$!value&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+#end
+
+#macro (formRowSelect $label $name $options $selectedValue)
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;$name&quot;&gt;$label&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;select id=&quot;$name&quot; name=&quot;$name&quot;&gt;
+#foreach ($option in $options)
+&lt;option#if ($option.get(0).equals($selectedValue)) selected#end value=&quot;$option.get(0)&quot;&gt;$option.get(1)&lt;/option&gt;
+#end
+&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
+#end
+
+#macro (formRowCheckbox $label $name $value $checked)
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;$name.$value&quot;&gt;$label&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;$name.$value&quot; type=&quot;checkbox&quot; name=&quot;$name&quot; value=&quot;$value&quot;#if ($checked) checked#end &gt;&lt;/td&gt;&lt;/tr&gt;
+#end
+]]></script>
+</div></div>
+
+<p>Note that I don't use the webwork UI tags.  (The HTML that comes out of them looks like vomit.)</p>
+
+<p>The HTML generated from above looks like:</p>
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<script class="theme: Default; brush: java; gutter: false" type="syntaxhighlighter"><![CDATA[
+&lt;html&gt;
+&lt;body onload=&quot;document.forms[0].elements[0].focus()&quot;&gt;
+
+&lt;a href=&quot;home.vm&quot;&gt;Home&lt;/a&gt;&lt;br/&gt;
+
+    
+&lt;form name=&quot;edit&quot; action=&quot;edit.action&quot; method=&quot;post&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;td&gt;user&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.password&quot;&gt;Password&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.password&quot; type=&quot;text&quot; name=&quot;user.password&quot; value=&quot;********&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;repeatPassword&quot;&gt;Repeat Password&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;repeatPassword&quot; type=&quot;text&quot; name=&quot;repeatPassword&quot; value=&quot;********&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.email&quot;&gt;Email&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.email&quot; type=&quot;text&quot; name=&quot;user.email&quot; value=&quot;user@example.com&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.locale&quot;&gt;Language&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;select id=&quot;user.locale&quot; name=&quot;user.locale&quot;&gt;
+&lt;option value=&quot;en&quot;&gt;English&lt;/option&gt;
+&lt;option selected value=&quot;en_AU&quot;&gt;English (Australia)&lt;/option&gt;
+&lt;option value=&quot;en_US&quot;&gt;English (United States)&lt;/option&gt;
+&lt;option value=&quot;en_GB&quot;&gt;English (United Kingdom)&lt;/option&gt;
+&lt;option value=&quot;es&quot;&gt;Spanish&lt;/option&gt;
+&lt;option value=&quot;fr&quot;&gt;French&lt;/option&gt;
+
+&lt;option value=&quot;de&quot;&gt;German&lt;/option&gt;
+&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.timeZone&quot;&gt;Time Zone&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;select id=&quot;user.timeZone&quot; name=&quot;user.timeZone&quot;&gt;
+&lt;option selected value=&quot;America/Los_Angeles&quot;&gt;(GMT-08:00) Los Angeles&lt;/option&gt;
+&lt;option value=&quot;Europe/London&quot;&gt;(GMT+00:00) London&lt;/option&gt;
+&lt;option value=&quot;Australia/Brisbane&quot;&gt;(GMT+10:00) Brisbane&lt;/option&gt;
+&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.telephone&quot;&gt;Telephone&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.telephone&quot; type=&quot;text&quot; name=&quot;user.telephone&quot; value=&quot;134&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.lockedOut.true&quot;&gt;Locked Out&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.lockedOut.true&quot; type=&quot;checkbox&quot; name=&quot;user.lockedOut&quot; value=&quot;true&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+
+  &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.disabled.true&quot;&gt;Disabled&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.disabled.true&quot; type=&quot;checkbox&quot; name=&quot;user.disabled&quot; value=&quot;true&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+
+
+
+    &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.priv.boss&quot;&gt;boss&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.priv.boss&quot; type=&quot;checkbox&quot; name=&quot;user.priv&quot; value=&quot;boss&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.priv.admin&quot;&gt;admin&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.priv.admin&quot; type=&quot;checkbox&quot; name=&quot;user.priv&quot; value=&quot;admin&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.priv.early&quot;&gt;early&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.priv.early&quot; type=&quot;checkbox&quot; name=&quot;user.priv&quot; value=&quot;early&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.priv.late&quot;&gt;late&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.priv.late&quot; type=&quot;checkbox&quot; name=&quot;user.priv&quot; value=&quot;late&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+
+    &lt;tr&gt;&lt;td&gt;&lt;label for=&quot;user.priv.train&quot;&gt;train&lt;/label&gt;&lt;/td&gt;&lt;td&gt;&lt;input id=&quot;user.priv.train&quot; type=&quot;checkbox&quot; name=&quot;user.priv&quot; value=&quot;train&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;input type=&quot;hidden&quot; name=&quot;user.username&quot; value=&quot;user&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+]]></script>
+</div></div></div>
+        </div>
+
+        
+    </div>
+</div>
+<div class="footer">
+    Generated by CXF SiteExporter
+</div>
+</body>
+</html>

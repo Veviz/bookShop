@@ -1,1 +1,3 @@
-# bookShop
+# Introduction
+
+一个基于J2EE的网上书店系统。功能很简单，就是高仿当当网的网上书店的系统。项目中主要使用了Struts2框架，表现层采用JSP和部分JavaScript语言进行编写，中间控制层采用Java语言编写，数据库软件选用的是SQL Server 2008。

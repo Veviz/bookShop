@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+<html>
+<head>
+    <LINK type="text/css" rel="stylesheet" href="https://struts.apache.org/css/default.css">
+    <style type="text/css">
+        .dp-highlighter {
+            width:95% !important;
+        }
+    </style>
+    <style type="text/css">
+        .footer {
+            background-image:      url('https://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+            background-repeat:     repeat-x;
+            background-position:   left top;
+            padding-top:           4px;
+            color:                 #666;
+        }
+    </style>
+    <link href='http://struts.apache.org/highlighter/style/shCoreStruts.css' rel='stylesheet' type='text/css' />
+    <link href='http://struts.apache.org/highlighter/style/shThemeStruts.css' rel='stylesheet' type='text/css' />
+    <script src='http://struts.apache.org/highlighter/js/shCore.js' type='text/javascript'></script>
+            <script src='http://struts.apache.org/highlighter/js/shBrushJava.js' type='text/javascript'></script>
+            <script src='http://struts.apache.org/highlighter/js/shBrushXml.js' type='text/javascript'></script>
+            <script src='http://struts.apache.org/highlighter/js/shBrushPlain.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript" language="javascript">
+        var hide = null;
+        var show = null;
+        var children = null;
+
+        function init() {
+            /* Search form initialization */
+            var form = document.forms['search'];
+            if (form != null) {
+                form.elements['domains'].value = location.hostname;
+                form.elements['sitesearch'].value = location.hostname;
+            }
+
+            /* Children initialization */
+            hide = document.getElementById('hide');
+            show = document.getElementById('show');
+            children = document.all != null ?
+                    document.all['children'] :
+                    document.getElementById('children');
+            if (children != null) {
+                children.style.display = 'none';
+                show.style.display = 'inline';
+                hide.style.display = 'none';
+            }
+        }
+
+        function showChildren() {
+            children.style.display = 'block';
+            show.style.display = 'none';
+            hide.style.display = 'inline';
+        }
+
+        function hideChildren() {
+            children.style.display = 'none';
+            show.style.display = 'inline';
+            hide.style.display = 'none';
+        }
+    </script>
+    <title>dojo head</title>
+</head>
+<body onload="init()">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+    <tr class="topBar">
+        <td align="left" valign="middle" class="topBarDiv" align="left" nowrap>
+            &nbsp;<a href="home.html">Home</a>&nbsp;&gt;&nbsp;<a href="guides.html">Guides</a>&nbsp;&gt;&nbsp;<a href="tag-developers-guide.html">Tag Developers Guide</a>&nbsp;&gt;&nbsp;<a href="struts-tags.html">Struts Tags</a>&nbsp;&gt;&nbsp;<a href="tag-reference.html">Tag Reference</a>&nbsp;&gt;&nbsp;<a href="ui-tag-reference.html">UI Tag Reference</a>&nbsp;&gt;&nbsp;<a href="dojo-head.html">dojo head</a>
+        </td>
+        <td align="right" valign="middle" nowrap>
+            <form name="search" action="http://www.google.com/search" method="get">
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="hidden" name="oe" value="UTF-8" />
+                <input type="hidden" name="domains" value="" />
+                <input type="hidden" name="sitesearch" value="" />
+                <input type="text" name="q" maxlength="255" value="" />
+                <input type="submit" name="btnG" value="Google Search" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+<div id="PageContent">
+    <div class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <div style="margin: 0px 10px 0px 10px" class="smalltext">Apache Struts 2 Documentation</div>
+        <div style="margin: 0px 10px 8px 10px"  class="pagetitle">dojo head</div>
+
+        <div class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+            <a href="https://cwiki.apache.org/confluence/pages/editpage.action?pageId=66757">
+                <img src="https://cwiki.apache.org/confluence/images/icons/notep_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Edit Page"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/editpage.action?pageId=66757">Edit Page</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/listpages.action?key=WW">
+                <img src="https://cwiki.apache.org/confluence/images/icons/browse_space.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Browse Space"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/listpages.action?key=WW">Browse Space</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=WW&fromPageId=66757">
+                <img src="https://cwiki.apache.org/confluence/images/icons/add_page_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Add Page"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=WW&fromPageId=66757">Add Page</a>
+            &nbsp;
+            <a href="https://cwiki.apache.org/confluence/pages/createblogpost.action?spaceKey=WW&fromPageId=66757">
+                <img src="https://cwiki.apache.org/confluence/images/icons/add_blogentry_16.gif"
+                     height="16" width="16" border="0" align="absmiddle" title="Add News"></a>
+            <a href="https://cwiki.apache.org/confluence/pages/createblogpost.action?spaceKey=WW&fromPageId=66757">Add News</a>
+        </div>
+    </div>
+
+    <div class="pagecontent">
+        <div class="wiki-content">
+            <div id="ConfluenceContent"><h2 id="dojohead-Description">Description</h2>
+    <div class="aui-message warning shadowed information-macro">
+                            <span class="aui-icon icon-warning">Icon</span>
+                <div class="message-content">
+                            
+<p>The "head" tag renders required JavaScript code to configure Dojo and is required in order to use
+any of the tags included in the Dojo plugin.</p>
+                    </div>
+    </div>
+
+<p></p><p></p>
+
+<p></p><p>To debug javascript errors set the "debug" attribute to true, which will display Dojo 
+(and Struts) warning and error messages at the bottom of the page. Core Dojo files are by default
+compressed, to improve loading time, which makes them very hard to read. To debug Dojo and Struts
+widgets, set the "compressed" attribute to true. Make sure to turn this option off before
+moving your project into production, as uncompressed files will take longer to download.
+</p>
+<p>For troubleshooting javascript problems the following configuration is recommended:</p>
+<pre>
+  &lt;sx:head debug="true" cache="false" compressed="false" /&gt;
+</pre>
+
+<p></p><p>Dojo files are loaded as required by the Dojo loading mechanism. The problem with this
+approach is that the files are not cached by the browser, so reloading a page or navigating
+to a different page that uses the same widgets will cause the files to be reloaded. To solve 
+this problem a custom Dojo profile is distributed with the Dojo plugin. This profile contains
+the files required by the tags in the Dojo plugin, all in one file (524Kb), which is cached 
+by the browser. This file will take longer to load by the browser but it will be downloaded 
+only once. By default the "cache" attribute is set to false.</p>
+
+<p></p><p>Some tags like the "datetimepicker" can use different locales, to use a locale
+that is different from the request locale, it must be specified on the "extraLocales" 
+attribute. This attribute can contain a comma separated list of locale names. From
+Dojo's documentation:</p>
+
+<p></p><p>
+The locale is a short string, defined by the host environment, which conforms to RFC 3066 
+(http://www.ietf.org/rfc/rfc3066.txt) used in the HTML specification. 
+It consists of short identifiers, typically two characters 
+long which are case-insensitive. Note that Dojo uses dash separators, not underscores like 
+Java (e.g. "en-us", not "en_US"). Typically country codes are used in the optional second 
+identifier, and additional variants may be specified. For example, Japanese is "ja"; 
+Japanese in Japan is "ja-jp". Notice that the lower case is intentional &#8211; while Dojo 
+will often convert all locales to lowercase to normalize them, it is the lowercase that 
+must be used when defining your resources.
+</p>
+
+<p></p><p>The "locale" attribute configures Dojo's locale:</p>
+
+<p></p><p>"The locale Dojo uses on a page may be overridden by setting djConfig.locale. This may be 
+done to accomodate applications with a known user profile or server pages which do manual
+assembly and assume a certain locale. You may also set djConfig.extraLocale to load 
+localizations in addition to your own, in case you want to specify a particular 
+translation or have multiple languages appear on your page."</p>
+
+<p></p><p>To improve loading time, the property "parseContent" is set to false by default. This property will
+instruct Dojo to only build widgets using specific element ids. If the property is set to true
+Dojo will scan the whole document looking for widgets.</p>
+
+<p></p><p>Dojo 0.4.3 is distributed with the Dojo plugin, to use a different Dojo version, the 
+"baseRelativePath" attribute can be set to the URL of the Dojo root folder on your application.
+</p>
+
+    <div class="aui-message problem shadowed information-macro">
+                            <span class="aui-icon icon-problem">Icon</span>
+                <div class="message-content">
+                            
+<p>If you are planning to nest tags from the Dojo plugin, make sure you set parseContent="false", otherwise each request made by the inner tags will be performed twice.</p>
+                    </div>
+    </div>
+
+
+<h2 id="dojohead-Parameters">Parameters</h2>
+<p><table width="100%"><tr><td colspan="6" rowspan="1"><h4>Dynamic Attributes Allowed:</h4> false</td></tr><tr><td colspan="6" rowspan="1">&#160;</td></tr><tr><th align="left" colspan="1" rowspan="1" valign="top"><h4>Name</h4></th><th align="left" colspan="1" rowspan="1" valign="top"><h4>Required</h4></th><th align="left" colspan="1" rowspan="1" valign="top"><h4>Default</h4></th><th align="left" colspan="1" rowspan="1" valign="top"><h4>Evaluated</h4></th><th align="left" colspan="1" rowspan="1" valign="top"><h4>Type</h4></th><th align="left" colspan="1" rowspan="1" valign="top"><h4>Description</h4></th></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">baseRelativePath</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">/struts/dojo</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">String</td><td align="left" colspan="1" rowspan="1" valign="top">Context relative path of Dojo distribution folder</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">cache</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">true</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">Boolean</td><td align="left" colspan="1" rowspan="1" valign="top">Use Struts Dojo profile, which contains all Struts widgets in one file, making it possible to be chached by the browser</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">compressed</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">true</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">Boolean</td><td align="left" colspan="1" rowspan="1" valign="top">Use compressed version of dojo.js</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">debug</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">Boolean</td><td align="left" colspan="1" rowspan="1" valign="top">Enable Dojo debug messages</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">extraLocales</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top"></td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">String</td><td align="left" colspan="1" rowspan="1" valign="top">Comma separated list of locale names to be loaded by Dojo, locale names must be specified as in RFC3066</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">locale</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top"></td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">String</td><td align="left" colspan="1" rowspan="1" valign="top">Default locale to be used by Dojo, locale name must be specified as in RFC3066</td></tr><tr><td align="left" colspan="1" rowspan="1" valign="top">parseContent</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">false</td><td align="left" colspan="1" rowspan="1" valign="top">Boolean</td><td align="left" colspan="1" rowspan="1" valign="top">Parse the whole document for widgets</td></tr></table></p>
+
+<h2 id="dojohead-Examples">Examples</h2>
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<script class="theme: Default; brush: xml; gutter: false" type="syntaxhighlighter"><![CDATA[
+&lt;%@ taglib prefix=&quot;sx&quot; uri=&quot;/struts-dojo-tags&quot; %&gt;
+&lt;head&gt;
+  &lt;title&gt;My page&lt;/title&gt;
+  &lt;sx:head/&gt;
+&lt;/head&gt;
+]]></script>
+</div></div>
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<script class="theme: Default; brush: xml; gutter: false" type="syntaxhighlighter"><![CDATA[
+&lt;%@ taglib prefix=&quot;sx&quot; uri=&quot;/struts-dojo-tags&quot; %&gt;
+&lt;head&gt;
+  &lt;title&gt;My page&lt;/title&gt;
+  &lt;sx:head debug=&quot;true&quot; extraLocales=&quot;en-us,nl-nl,de-de&quot;/&gt;
+&lt;/head&gt;
+]]></script>
+</div></div></div>
+        </div>
+
+        
+    </div>
+</div>
+<div class="footer">
+    Generated by CXF SiteExporter
+</div>
+</body>
+</html>

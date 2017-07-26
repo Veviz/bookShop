@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="user" namespace="/" extends="struts-default">
+
+		<action name="login" class="com.Action.Login" method="execute">
+			<result name="shopkeeper">/shopkeeper.jsp</result>
+			<result name="customer">/ShoppingCartInfo.jsp</result>
+			<result name="failure">/Login.jsp</result>
+		</action>
+
+		<action name="Logout" class="com.Action.Login" method="logout">
+			<result name="success">/Login.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+		<action name="register" class="com.Action.register" method="execute">
+			<result name="success">/Login.jsp</result>
+			<result name="failure">/customer_add.jsp</result>
+		</action>
+
+		<action name="update" class="com.Action.register" method="update">
+			<result name="customer">/customer.jsp</result>
+			<result name="shopkeeper">/shopkeeper.jsp</result>
+			<result name="failure1">/error.jsp</result>
+			<result name="failure2">/userInfomation.jsp</result>
+		</action>
+
+		<action name="user" class="com.Action.manager" method="execute">
+			<result name="success">/user.jsp</result>
+		</action>
+
+		<action name="userDel" class="com.Action.manager" method="delete">
+			<result name="success">/shopkeeper.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="book" namespace="/" extends="struts-default">
+
+		<action name="bookInfo" class="com.Action.bookManage" method="showBookInfo">
+			<result name="success">/book.jsp</result>
+		</action>
+
+		<action name="bookAdd" class="com.Action.bookManage" method="execute">
+			<result name="success">/shopkeeper.jsp</result>
+		</action>
+
+
+		<action name="bookDel" class="com.Action.bookManage" method="delBook">
+			<result name="shopkeeper">/shopkeeper.jsp</result>
+			<result name="customer">/customer.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+		<action name="bookEdit" class="com.Action.bookManage" method="editBook">
+			<result name="shopkeeper">/shopkeeper.jsp</result>
+			<result name="customer">/customer.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+		<action name="bookSearch" class="com.Action.bookManage" method="searchBook">
+			<result name="success">/searchResult.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+		<action name="buy" class="com.Action.bookManage" method="buy">
+			<result name="success">/ShoppingCartInfo.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+	</package>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="delete" class="Deleteaction" method="execute">
+			<result name="success">/DeleteBook.jsp</result>
+		</action>
+		<action name="order_edit" class="Orderaction" method="order_edit">
+			<result name="success">/order_edit.jsp</result>
+		</action>
+		<action name="store_order" class="Orderaction" method="store_order">
+			<result name="store">/Store_Order.jsp</result>
+		</action>
+		<action name="change" class="Orderaction" method="change_order">
+			<result name="change">/order_edit.jsp</result>
+		</action>
+		<action name="show_order" class="Orderaction" method="show_order">
+			<result name="show">/GetOrderInfo.jsp</result>
+		</action>
+		<action name="payMoney" class="Orderaction" method="payMoney">
+			<result name="paymoney">/PayMoney.jsp</result>
+		</action>
+		<action name="updateorder" class="Orderaction" method="updateorder">
+			<result name="updateorder">/Update_order.jsp</result>
+		</action>
+		<action name="deleteorder" class="Orderaction" method="deleteorder">
+			<result name="deleteorder">/Delete_order.jsp</result>
+		</action>
+	</package>
+</struts>

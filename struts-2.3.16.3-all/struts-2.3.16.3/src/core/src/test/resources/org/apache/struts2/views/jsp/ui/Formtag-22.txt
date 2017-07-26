@@ -1,0 +1,73 @@
+<script type="text/javascript" src="/struts/xhtml/validation.js"></script>
+<script type="text/javascript "src="/struts/utils.js"></script>
+<form id="myAction" name="myForm" onsubmit="submitMe(); return validateForm_myAction();" action="/myAction.action" method="post" enctype="myEncType" title="mytitle" accept-charset="UTF-8" onreset="clearErrorMessages(this);clearErrorLabels(this);">
+<table class="wwFormTable"> <tr>
+    <td class="tdLabel"></td>
+    <td>	<script type="text/javascript" src="/struts/optiontransferselect.js"></script>
+<table>
+<tr><td>
+<select name="myUpDownSelectTag" size="5" id="myAction_myUpDownSelectTag" multiple="multiple">
+</select>
+<input type="hidden" id="__multiselect_myAction_myUpDownSelectTag" name="__multiselect_myUpDownSelectTag"value=""/>
+</td></tr>
+<tr><td>
+		&nbsp;<input type="button" value="^" onclick="moveOptionUp(document.getElementById('myAction_myUpDownSelectTag'), 'key', '');" />&nbsp;
+		&nbsp;<input type="button" value="v" onclick="moveOptionDown(document.getElementById('myAction_myUpDownSelectTag'), 'key', '');" />&nbsp;
+		&nbsp;<input type="button" value="*" onclick="selectAllOptions(document.getElementById('myAction_myUpDownSelectTag'), 'key', '');" />&nbsp;
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+
+
+<script type="text/javascript">
+	var containingForm = document.getElementById("myAction");
+	StrutsUtils.addEventListener(containingForm, "submit",
+			function(evt) {
+				var updownselectObj = document.getElementById("myAction_myUpDownSelectTag");
+				selectAllOptionsExceptSome(updownselectObj, "key", "");
+			}, true);
+</script>
+
+<script type="text/javascript">
+    function validateForm_myAction() {
+        var getFieldValue = function(field) {
+            var type = field.type ? field.type : field[0].type;
+            if(type == 'select-one' || type == 'select-multiple') {
+                return (field.selectedIndex == -1 ? "" : field.options[field.selectedIndex].value);
+            } else if(type == 'checkbox' || type == 'radio') {
+                if(!field.length) {
+                    field = [field];
+                }
+                for(var i = 0; i < field.length; i++) {
+                    if(field[i].checked) {
+                        return field[i].value;
+                    }
+                }
+                return"";
+            }
+            return field.value;
+        }
+        form = document.getElementById("myAction");
+        clearErrorMessages(form);
+        clearErrorLabels(form);
+        var errors = false;
+        var continueValidation = true;
+        //fieldname:myUpDownSelectTag
+        //validatorname:int
+        if(form.elements['myUpDownSelectTag']) {
+            field = form.elements['myUpDownSelectTag'];
+            var error = "bar must be between 6000 and 10000.";
+            var fieldValue = getFieldValue(field);
+            if(continueValidation && fieldValue != null) {
+                if(parseInt(fieldValue) < 6000 || parseInt(fieldValue) > 10000) {
+                    addError(field, error);
+                    errors = true;
+                }
+            }
+        }
+    return !errors;
+    }
+</script>
